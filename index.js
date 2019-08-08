@@ -47,5 +47,5 @@ module.exports.launch = (options = {}) =>
 	.then(() => launch(options))
 	// .then(() => endpoint())
 	// .then(url => puppeteer.connect({browserWSEndpoint: url}))
-	.then(() => puppeteer.connect({browserURL: 'http://localhost:8315'}))
+	.then(() => puppeteer.connect({browserURL: 'http://localhost:8315', slowMo: options.slowMo, defaultViewport: options.defaultViewport}))
 	.then(browser => patch(browser))
